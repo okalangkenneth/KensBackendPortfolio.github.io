@@ -116,6 +116,7 @@ export default function FeaturedWork() {
       padding: '1rem 1.5rem 5rem',
       maxWidth: '900px',
       margin: '0 auto',
+      scrollMarginTop: '52px',
     },
     label: {
       fontSize: '11px',

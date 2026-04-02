@@ -49,6 +49,7 @@ export default function MoreWork() {
       padding: '0 1.5rem 5rem',
       maxWidth: '900px',
       margin: '0 auto',
+      scrollMarginTop: '52px',
     },
     label: {
       fontSize: '11px',
@@ -102,7 +103,7 @@ export default function MoreWork() {
   }
 
   return (
-    <section id="skills" style={s.section}>
+    <section style={s.section}>
       <span style={s.label}>More work</span>
       <div style={s.grid}>
         {MORE.map((item) => (

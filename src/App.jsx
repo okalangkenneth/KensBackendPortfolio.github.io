@@ -2,6 +2,8 @@ import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import FeaturedWork from './components/FeaturedWork.jsx'
 import MoreWork from './components/MoreWork.jsx'
+import Skills from './components/Skills.jsx'
+import About from './components/About.jsx'
 import Footer from './components/Footer.jsx'
 
 const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -18,6 +20,8 @@ export default function App() {
         <Hero />
         <FeaturedWork />
         <MoreWork />
+        <Skills />
+        <About />
       </main>
       <Footer />
     </div>

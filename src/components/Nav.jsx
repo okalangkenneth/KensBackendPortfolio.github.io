@@ -55,26 +55,20 @@ export default function Nav() {
     },
   }
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id.toLowerCase())
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
-    setMenuOpen(false)
-  }
-
   return (
     <nav style={s.nav}>
       <span style={s.name}>Kenneth Okalang</span>
       <ul style={s.links}>
         {NAV_LINKS.map((label) => (
           <li key={label}>
-            <span
-              style={label === 'Contact' ? s.contactLink : s.link}
-              onClick={() => scrollTo(label)}
-              onMouseEnter={e => { if (label !== 'Contact') e.target.style.color = dark ? '#e5e7eb' : '#111827' }}
-              onMouseLeave={e => { if (label !== 'Contact') e.target.style.color = dark ? '#9ca3af' : '#6b7280' }}
+            <a
+              href={`#${label.toLowerCase()}`}
+              style={{ ...(label === 'Contact' ? s.contactLink : s.link), textDecoration: 'none' }}
+              onMouseEnter={e => { if (label !== 'Contact') e.currentTarget.style.color = dark ? '#e5e7eb' : '#111827' }}
+              onMouseLeave={e => { if (label !== 'Contact') e.currentTarget.style.color = dark ? '#9ca3af' : '#6b7280' }}
             >
               {label}{label === 'Contact' ? ' ↗' : ''}
-            </span>
+            </a>
           </li>
         ))}
       </ul>

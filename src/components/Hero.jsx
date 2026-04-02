@@ -11,6 +11,7 @@ export default function Hero() {
       padding: '5rem 1.5rem 4.5rem',
       maxWidth: '780px',
       margin: '0 auto',
+      scrollMarginTop: '52px',
     },
     availability: {
       display: 'flex',
@@ -59,7 +60,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="about" style={s.section}>
+    <section style={s.section}>
       <div style={s.availability}>
         <span style={s.dot} />
         Available for work · Kista, Sweden
