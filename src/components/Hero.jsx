@@ -67,7 +67,7 @@ export default function Hero() {
       </div>
       <h1 style={s.h1}>Fullstack &amp; AI Engineer</h1>
       <p style={s.subtext}>
-        I build production-grade .NET systems and AI-powered backends — from microservices
+        I build production-grade .NET systems and AI-powered backends, from microservices
         architecture to RAG pipelines and ML APIs.
       </p>
       <div style={s.tags}>
