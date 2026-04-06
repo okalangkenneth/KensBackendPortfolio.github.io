@@ -1,7 +1,7 @@
 const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 const PARAGRAPHS = [
-  'Kenneth is a fullstack and AI engineer based in Kista, Sweden, specializing in .NET backend systems and AI-integrated applications. With a foundation in C# and ASP.NET Core, he builds everything from production microservices platforms to RAG pipelines and ML APIs, with a focus on clean architecture and real-world impact.',
+  'Kenneth is comfortable across the full stack, with deep specialisation in backend systems and applied AI. ',
   'He works across the full stack, delivering systems that have gone into production in industries ranging from energy and healthcare to logistics and finance. Currently exploring the intersection of .NET and applied AI, particularly with Dify-based agent workflows and ML.NET predictive APIs.',
   'Open to freelance projects and collaborations.',
 ]
