@@ -24,7 +24,7 @@ const GROUPS = [
   {
     label: 'Data',
     variant: 'teal',
-    skills: ['SQL Server', 'Entity Framework Core', 'Power BI', 'ETL'],
+    skills: ['SQL Server', 'MySQL Server', 'PostgreSQL', 'Entity Framework Core', 'Power BI', 'ETL'],
   },
   {
     label: 'DevOps',
@@ -39,7 +39,7 @@ const GROUPS = [
   {
     label: 'Cloud',
     variant: 'gray',
-    skills: ['Azure', 'GitHub Pages'],
+    skills: ['Azure', 'Oracle Cloud', 'Cloudflare', 'GitHub Pages'],
   },
 ]
 

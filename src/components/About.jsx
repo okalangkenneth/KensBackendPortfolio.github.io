@@ -39,10 +39,24 @@ export default function About() {
   return (
     <section id="about" style={s.section}>
       <span style={s.sectionLabel}>About</span>
-      <div style={s.prose}>
-        {PARAGRAPHS.map((text, i) => (
-          <p key={i} style={s.p}>{text}</p>
-        ))}
+      <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+        <img
+          src="/kenneth.png"
+          alt="Kenneth Okalang"
+          style={{
+            width: '160px',
+            height: '160px',
+            borderRadius: '12px',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            flexShrink: 0,
+          }}
+        />
+        <div style={s.prose}>
+          {PARAGRAPHS.map((text, i) => (
+            <p key={i} style={s.p}>{text}</p>
+          ))}
+        </div>
       </div>
     </section>
   )
