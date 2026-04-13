@@ -4,28 +4,22 @@ const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 const MORE = [
   {
-    title: 'Renewable Assets DB',
-    desc: 'Automated ETL pipeline for renewable energy data.',
-    tech: 'SQL Server · Power BI',
-    link: 'https://github.com/okalangkenneth/renewable_assets_database',
+    title: 'EcoSound Monitor',
+    desc: 'Wildlife compliance platform for wind farms using ML-based audio classification (BirdNET).',
+    tech: 'Python · FastAPI · React',
+    link: 'https://github.com/okalangkenneth/ecosound-monitor',
   },
   {
-    title: 'EncryptedChatFlow',
-    desc: 'End-to-end encrypted messaging system.',
-    tech: 'C#',
-    link: 'https://github.com/okalangkenneth/EncryptedChatFlow',
+    title: 'ShopFlow',
+    desc: 'E-commerce automation backend with event-driven architecture, BullMQ queues, and webhook handling.',
+    tech: 'Node.js · TypeScript · Redis',
+    link: 'https://github.com/okalangkenneth/shopflow',
   },
   {
     title: 'Scout Vision',
     desc: 'AI-powered sports scouting platform with video analysis and athlete profiles.',
     tech: 'TypeScript',
     link: 'https://github.com/okalangkenneth/scout-vision',
-  },
-  {
-    title: 'E-Commerce API',
-    desc: 'RESTful API with JWT auth, product catalog, orders, and cart.',
-    tech: 'ASP.NET · JWT',
-    link: 'https://github.com/okalangkenneth/E-Commerce',
   },
   {
     title: 'RealEstateApp',
