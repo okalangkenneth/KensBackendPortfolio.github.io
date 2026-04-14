@@ -9,7 +9,7 @@
 ## 🚀 Featured Projects
 
 ### AI Customer Support Agent
-Production-ready RAG pipeline with hallucination validation — every AI response is verified against source documents before delivery.
+Production-ready RAG pipeline with hallucination validation. Every AI response is verified against source documents before delivery.
 - **Tech:** Dify Platform, RAG, Python
 - **GitHub:** [dify-customer-support-agent](https://github.com/okalangkenneth/dify-customer-support-agent)
 
