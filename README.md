@@ -1,4 +1,4 @@
-# Kenneth Okalang — Backend & AI Engineer Portfolio
+# Kenneth Okalang. Backend & AI Engineer Portfolio
 
 > Production-grade .NET systems, AI-powered backends, and scalable microservices
 
