@@ -1,4 +1,4 @@
-import { Badge, TagPill } from './Badge.jsx'
+﻿import { Badge, TagPill } from './Badge.jsx'
 
 const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
@@ -27,7 +27,7 @@ function CardHeader({ badge, badgeVariant, year, title, description, tags, link 
           onMouseEnter={e => e.currentTarget.style.color = dark ? '#e5e7eb' : '#111827'}
           onMouseLeave={e => e.currentTarget.style.color = dark ? '#9ca3af' : '#6b7280'}
         >
-          GitHub ↗
+          GitHub â†—
         </a>
       </div>
       <h3 style={{ fontSize: '17px', fontWeight: 600, color: dark ? '#f9fafb' : '#111827', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>
@@ -108,6 +108,16 @@ const PAIRED_2 = [
     tags: ['TypeScript', 'POS', 'Production'],
     link: 'https://github.com/okalangkenneth/PharmaNest-POS',
   },
+  {
+    id: 'ecosound',
+    badge: 'Open Source',
+    badgeVariant: 'purple',
+    year: '2026',
+    title: 'EcoSound Monitor',
+    description: 'Open-source wildlife compliance platform for wind farms. Automated bat and bird detection via BirdNET and BatDetect2. Generates regulatory PDF reports. Docker-ready with GitHub Actions CI.',
+    tags: ['FastAPI', 'BirdNET', 'BatDetect2', 'React', 'Docker', 'Python'],
+    link: 'https://github.com/okalangkenneth/ecosound-monitor',
+  },
 ]
 
 export default function FeaturedWork() {
@@ -166,3 +176,4 @@ export default function FeaturedWork() {
     </section>
   )
 }
+

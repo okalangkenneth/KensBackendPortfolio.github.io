@@ -1,0 +1,207 @@
+﻿<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+	<title>EcoSound Monitor - Backend Insight by Kenneth Okalang</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="How I built an open-source wildlife compliance platform for wind farms using BirdNET, BatDetect2, FastAPI and React." />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+<div id="wrapper" class="fade-in">
+
+	<div id="intro">
+		<ul class="actions">
+			<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+		</ul>
+	</div>
+
+	<header id="header">
+		<a href="index.html" class="logo">BACKEND INSIGHT</a>
+	</header>
+
+	<nav id="nav">
+		<ul class="links">
+			<li><a href="index.html">APIs</a></li>
+			<li><a href="microservices.html">MICROSERVICES</a></li>
+			<li><a href="servers.html">SERVERS AND DATABASES</a></li>
+			<li><a href="security.html">SECURITY</a></li>
+			<li class="active"><a href="ai.html">AI</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+		<ul class="icons">
+			<li><a href="https://www.linkedin.com/in/kenneth-okalang/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<li><a href="https://github.com/okalangkenneth" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+		</ul>
+	</nav>
+
+	<div id="main">
+		<article class="post featured">
+			<header class="major">
+				<span class="date">May 2026</span>
+				<h2>I Built an Open-Source Wildlife Compliance Platform for Wind Farms</h2>
+				<p>
+					Wind farms across Sweden, Norway, Denmark, and Germany are legally required to monitor
+					bat and bird activity near their turbines. Traditionally this means expensive manual
+					acoustic surveys. I built EcoSound Monitor to automate this â€” a full-stack application
+					that processes field recordings, identifies species using real ML models, and generates
+					regulatory-grade PDF compliance reports.
+				</p>
+			</header>
+
+			<a href="https://github.com/okalangkenneth/ecosound-monitor" class="image main">
+				<img src="images/ecosound.jpg" alt="EcoSound Monitor â€” Wildlife Compliance Dashboard" />
+			</a>
+
+			<h3>The Problem</h3>
+			<p>
+				EU environmental regulations require wind farm operators to prove they are not
+				significantly impacting protected bat and bird species. The standard approach is to
+				hire specialist ecologists to place acoustic recorders in the field, then manually
+				review hours of audio recordings. This is slow, costly, and creates a bottleneck
+				in the compliance reporting process.
+			</p>
+			<p>
+				The software tools that exist for this are either expensive proprietary platforms
+				or academic tools that require deep domain knowledge to operate. There was a clear
+				gap for an open-source, developer-friendly solution.
+			</p>
+
+			<h3>The Solution</h3>
+			<p>
+				EcoSound Monitor is a Docker-ready full-stack platform that lets operators upload
+				audio recordings and receive automated species detections with confidence scores
+				and timestamps â€” all in under a minute.
+			</p>
+			<p>
+				The backend is built on <strong>FastAPI</strong> and integrates two real ML models:
+			</p>
+			<ul>
+				<li>
+					<strong>BirdNET</strong> via the <code>birdnetlib</code> Python library â€” one of the
+					most accurate bird audio classifiers available, trained on thousands of species
+					worldwide. It correctly identified 5 European species from a single Common Blackbird
+					recording in my testing, including Robin, Chaffinch, Blue Tit, and Great Tit.
+				</li>
+				<li>
+					<strong>BatDetect2</strong> â€” a PyTorch-based deep learning model for bat echolocation
+					call detection. Requires ultrasonic audio recorded at 192kHz or higher, which is
+					standard equipment for professional bat surveys (AudioMoth, Pettersson D500X).
+				</li>
+			</ul>
+
+			<h3>Architecture</h3>
+			<p>
+				The stack is deliberately minimal and self-hostable â€” no external ML APIs, no cloud
+				dependencies, no per-query costs. Everything runs locally via Docker.
+			</p>
+			<ul>
+				<li><strong>Backend:</strong> FastAPI + SQLAlchemy + SQLite</li>
+				<li><strong>ML:</strong> birdnetlib (BirdNET) + BatDetect2</li>
+				<li><strong>Reports:</strong> ReportLab PDF generation</li>
+				<li><strong>Frontend:</strong> React 18 + Vite + TailwindCSS + Recharts</li>
+				<li><strong>Infrastructure:</strong> Docker Compose with lite/full image split</li>
+				<li><strong>CI/CD:</strong> GitHub Actions</li>
+			</ul>
+
+			<h3>The Lite/Full Image Split</h3>
+			<p>
+				One of the key engineering decisions was splitting the Docker image into two tiers.
+				BatDetect2 requires PyTorch which, combined with TensorFlow for BirdNET, produced a
+				5.8GB image. That's a significant barrier for most users who only need bird detection.
+			</p>
+			<p>
+				The solution was a <code>BAT_DETECTION_ENABLED</code> environment flag and two
+				Dockerfiles: a lite image (~800MB, bird detection only) that is the default, and a
+				full image (5.8GB) enabled via <code>docker compose --profile full up</code> for
+				users with ultrasonic recording equipment.
+			</p>
+
+			<h3>The Compliance Report</h3>
+			<p>
+				The output that matters most to operators is the PDF compliance report. Each report
+				includes recording metadata, a full species detection table with scientific names,
+				common names, confidence scores, and timestamps â€” formatted to match what regulators
+				expect to see.
+			</p>
+			<p>
+				In testing with a 40-second Common Blackbird recording from Xeno-Canto, the system
+				correctly identified 5 species with confidence scores ranging from 78% to 92%.
+			</p>
+
+			<h3>Getting Started</h3>
+			<p>The entire setup is a single command:</p>
+			<pre><code>git clone https://github.com/okalangkenneth/ecosound-monitor.git
+cd ecosound-monitor
+docker compose up --build</code></pre>
+			<p>
+				Open <code>http://localhost:3000</code>, drag and drop an audio file, and the
+				detection pipeline runs automatically. Download the PDF compliance report from
+				the dashboard.
+			</p>
+
+			<h3>What's Next</h3>
+			<p>
+				The immediate roadmap includes real-time spectrogram visualization (the biggest
+				UX gap right now), multi-site management for operators running multiple monitoring
+				locations, and alert thresholds for high-risk detection periods that could trigger
+				turbine shutdowns under EU regulation.
+			</p>
+			<p>
+				Contributions are welcome â€” see the
+				<a href="https://github.com/okalangkenneth/ecosound-monitor/blob/main/CONTRIBUTING.md">
+					CONTRIBUTING.md
+				</a>
+				for setup instructions.
+			</p>
+
+			<ul class="actions special">
+				<li>
+					<a href="https://github.com/okalangkenneth/ecosound-monitor" class="button large">
+						VIEW ON GITHUB
+					</a>
+				</li>
+			</ul>
+
+			<div class="tech-stack">
+				<span class="tech">FastAPI</span>
+				<span class="tech">BirdNET</span>
+				<span class="tech">BatDetect2</span>
+				<span class="tech">React 18</span>
+				<span class="tech">SQLAlchemy</span>
+				<span class="tech">Docker</span>
+				<span class="tech">GitHub Actions</span>
+				<span class="tech">ReportLab</span>
+				<span class="tech">Python 3.10</span>
+			</div>
+		</article>
+	</div>
+
+	<div id="copyright">
+		<ul>
+			<li>&copy; Kenneth Okalang</li>
+			<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script defer src="https://app.fastbots.ai/embed.js"
+	data-bot-id="clp2ql6yu003dpyb4wm6uc4ah"
+	data-fab-position="right"
+	data-fabbg="#033e84"></script>
+</body>
+</html>
