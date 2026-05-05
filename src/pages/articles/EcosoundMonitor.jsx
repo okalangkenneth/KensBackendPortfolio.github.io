@@ -1,4 +1,4 @@
-const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
+﻿const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 const s = {
   p: { fontSize: '16px', lineHeight: 1.75, color: dark ? '#d1d5db' : '#374151', marginBottom: '1.5rem' },
@@ -34,6 +34,7 @@ const s = {
 export default function EcosoundMonitor() {
   return (
     <div>
+      <img src="/ecosound.jpg" alt="Wildlife compliance report" style={{ width: "100%", borderRadius: "8px", marginBottom: "2rem" }} />
       <p style={s.p}>
         Wind farms across Sweden, Norway, Denmark, and Germany are legally required to monitor
         bat and bird activity near their turbines. Traditionally this means expensive manual
@@ -131,3 +132,4 @@ docker compose up --build
     </div>
   )
 }
+

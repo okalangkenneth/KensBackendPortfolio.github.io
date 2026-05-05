@@ -1,18 +1,13 @@
-import { TagPill } from './Badge.jsx'
+﻿import { TagPill } from './Badge.jsx'
 
 const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 const MORE = [
   {
-    title: 'EcoSound Monitor',
-    desc: 'Wildlife compliance platform for wind farms using ML-based audio classification (BirdNET).',
-    tech: 'Python · FastAPI · React',
-    link: 'https://github.com/okalangkenneth/ecosound-monitor',
-  },
   {
     title: 'ShopFlow',
     desc: 'E-commerce automation backend with event-driven architecture, BullMQ queues, and webhook handling.',
-    tech: 'Node.js · TypeScript · Redis',
+    tech: 'Node.js Â· TypeScript Â· Redis',
     link: 'https://github.com/okalangkenneth/shopflow',
   },
   {
@@ -24,13 +19,13 @@ const MORE = [
   {
     title: 'RealEstateApp',
     desc: 'Property listings, search, and management platform.',
-    tech: 'C# · ASP.NET',
+    tech: 'C# Â· ASP.NET',
     link: 'https://github.com/okalangkenneth/RealEstateApp',
   },
   {
     title: 'ContentMaster API',
     desc: 'AI-driven content management API with modern REST architecture.',
-    tech: 'C# · AI',
+    tech: 'C# Â· AI',
     link: 'https://github.com/okalangkenneth/contentmaster-api',
   },
 ]
@@ -112,7 +107,7 @@ export default function MoreWork() {
           >
             <div style={s.title}>
               <span>{item.title}</span>
-              <span style={s.arrow}>↗</span>
+              <span style={s.arrow}>â†—</span>
             </div>
             <p style={s.desc}>{item.desc}</p>
             <span style={s.tech}>{item.tech}</span>
@@ -122,3 +117,4 @@ export default function MoreWork() {
     </section>
   )
 }
+
