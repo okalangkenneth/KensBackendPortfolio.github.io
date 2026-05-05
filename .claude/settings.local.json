@@ -5,7 +5,30 @@
       "Bash(npm create:*)",
       "Bash(npm install:*)",
       "Bash(npm run:*)",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" log --oneline -5 -- docs/)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" show HEAD:docs/index.html)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" show HEAD~1:docs/assets/)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" ls-tree HEAD~1 docs/assets/)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" show HEAD~1:docs/index.html)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" status)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" branch -a)",
+      "WebFetch(domain:backendinsight.com)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" ls-tree origin/main docs/assets/)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" ls-tree origin/Ken_Portfolio docs/assets/)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" ls-tree origin/master docs/assets/)",
+      "Bash(curl -sI https://backendinsight.com)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" ls-tree -r origin/main --name-only)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" ls-tree -r origin/Ken_Portfolio --name-only)",
+      "Bash(curl -s https://backendinsight.com)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" show origin/main:CNAME)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" show origin/Ken_Portfolio:CNAME)",
+      "Bash(curl -s \"https://backendinsight.com/assets/index-CBzK3aAc.js\")",
+      "Bash(curl -sI \"https://backendinsight.com/assets/index-CBzK3aAc.js\")",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" add index.html public/favicon.svg docs/index.html docs/favicon.svg)",
+      "Bash(git -C E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio commit -m ':*)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" push origin master)",
+      "Bash(git -C \"E:/Projects/KensBackendPortfolio.github.io-Ken_Portfolio\" add index.html docs/index.html docs/assets/ src/components/FeaturedWork.jsx)"
     ]
   }
 }
