@@ -1,13 +1,12 @@
-﻿import { TagPill } from './Badge.jsx'
+import { TagPill } from './Badge.jsx'
 
 const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
 const MORE = [
   {
-  {
     title: 'ShopFlow',
     desc: 'E-commerce automation backend with event-driven architecture, BullMQ queues, and webhook handling.',
-    tech: 'Node.js Â· TypeScript Â· Redis',
+    tech: 'Node.js · TypeScript · Redis',
     link: 'https://github.com/okalangkenneth/shopflow',
   },
   {
@@ -19,13 +18,13 @@ const MORE = [
   {
     title: 'RealEstateApp',
     desc: 'Property listings, search, and management platform.',
-    tech: 'C# Â· ASP.NET',
+    tech: 'C# · ASP.NET',
     link: 'https://github.com/okalangkenneth/RealEstateApp',
   },
   {
     title: 'ContentMaster API',
     desc: 'AI-driven content management API with modern REST architecture.',
-    tech: 'C# Â· AI',
+    tech: 'C# · AI',
     link: 'https://github.com/okalangkenneth/contentmaster-api',
   },
 ]
@@ -107,7 +106,7 @@ export default function MoreWork() {
           >
             <div style={s.title}>
               <span>{item.title}</span>
-              <span style={s.arrow}>â†—</span>
+              <span style={s.arrow}>↗</span>
             </div>
             <p style={s.desc}>{item.desc}</p>
             <span style={s.tech}>{item.tech}</span>
@@ -117,4 +116,3 @@ export default function MoreWork() {
     </section>
   )
 }
-
